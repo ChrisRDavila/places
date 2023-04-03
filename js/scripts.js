@@ -1,8 +1,12 @@
 // Business Logic for Travel Log
 function TravelLog() {
-  this.place = {};
+  this.places = {};
   this.placeId = 0;
 }
+
+TravelLog.prototype.addPlace = function(place){
+  this.places[place.locationCity] = place;
+};
 
 TravelLog.prototype.assignID = function() {
   this.currentId += 1;
