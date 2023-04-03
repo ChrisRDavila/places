@@ -16,8 +16,16 @@ Test: "Adding a place into our databank for all of our places"
 Code: let travelLog = new TravelLog ();
 let place = new Place("Paris", "France", "Eiffel Tower", "summer");
 let place2 = new Place("Amsterdam", "Netherlands", "The Canals", "fall");
-addressBook.addContact(contact)
+travelLog.addPlace(place);
+travelLog.addPlace(place2);
+Expected Output: places {place: "Paris", place: "Amsterdam"}
 
-
+Test: "Assign unique Id to each place"
+Code: this.places[place.id] = place;
+let place = new Place("Paris", "France", "Eiffel Tower", "summer");
+let place2 = new Place("Amsterdam", "Netherlands", "The Canals", "fall");
+travelLog.addPlace(place);
+travelLog.addPlace(place2);
+Expected output: {place: Paris, 0 place: Amsterdam, 1}
 
 ```

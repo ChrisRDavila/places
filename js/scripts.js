@@ -1,17 +1,25 @@
 // Business Logic for Travel Log
 function TravelLog() {
   this.places = {};
-  this.placeId = 0;
+  this.currentId = 0;
 }
 
 TravelLog.prototype.addPlace = function(place){
-  this.places[place.locationCity] = place;
+  place.id = this.assignID();
+  this.places[place.id] = place;
 };
 
 TravelLog.prototype.assignID = function() {
   this.currentId += 1;
   return this.currentId;
-}
+};
+
+TravelLog.prototype.findPlace = function(id) {
+  if (this.places[id] !== undefined) {
+    return this.places[id];
+  }
+  return false;
+};
 
 // Business Logic for Places
 function Place(locationCity, locationCountry, landmarks, timeOfYear) {
@@ -23,6 +31,6 @@ function Place(locationCity, locationCountry, landmarks, timeOfYear) {
 
 Place.prototype.fullLocation = function() {
   return this.locationCity + ", " + this.locationCountry;
-}
+};
 
 
