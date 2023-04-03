@@ -28,4 +28,11 @@ travelLog.addPlace(place);
 travelLog.addPlace(place2);
 Expected output: {place: Paris, 0 place: Amsterdam, 1}
 
+Test: "Deletes Id for TravelLog()"
+Code: travellog.deletePlace(1);
+Expected OutPut: travellog.places;
+TravelLog {places:{...}, currentId: 2}
+places: {2: Place}
+currentId: 2
+
 ```

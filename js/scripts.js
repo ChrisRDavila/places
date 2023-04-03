@@ -20,6 +20,13 @@ TravelLog.prototype.findPlace = function(id) {
   }
   return false;
 };
+TravelLog.prototype.deletePlace = function(id) {
+  if (this.places[id] === undefined) {
+    return false;
+  }
+  delete this.places[id];
+  return true;
+};
 
 // Business Logic for Places
 function Place(locationCity, locationCountry, landmarks, timeOfYear) {
